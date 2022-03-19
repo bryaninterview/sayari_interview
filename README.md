@@ -34,10 +34,12 @@ Let's say you unzip logstash to /home/xxx/logstash-7.17.1/
 
 3. Go that logstash folder, then go down 1 level to bin, you should be in /home/xxx/logstash-7.17.1/bin using cd
 
-4. Once is in that path, type: ./logstash -f /home/xxx/openaq_assignment/aq.conf
-(or whatever path where you cloned the assignment to, just make sure to point logstash to that logstash programmed config aq.conf)
+4. Before running, please modify the aq.conf in the repo "path" under "file" and "input" section  to point to where the data files are. For instance, you have to point path to "/home/xxx/openaq_data/*.csv" or where you have the csv data
 
-5. You should see logstash starting to load data into your deployed elasticsearch, you can verify with curl http://localhost:9200/_cat/indices you should see the monthly-based openaq_* showing up in the index list returned
+5. Once you are in the logstash path (/home/xxx/logstash-7.17.1/bin), type: ./logstash -f /home/xxx/openaq_assignment/aq.conf
+(or whatever path where you cloned the assignment to, just make sure to point logstash to that logstash programmed config aq.conf in the repo)
+
+6. You should see logstash starting to load data into your deployed elasticsearch, you can verify with curl http://localhost:9200/_cat/indices you should see the monthly-based openaq_* showing up in the index list returned
 
 ### 5) Querying
 
